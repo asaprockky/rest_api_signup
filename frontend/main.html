@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Management</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>User Management System</h1>
+
+    <!-- Registration Form -->
+    <div class="container">
+        <h2>Register User</h2>
+        <form id="registerForm">
+            <input type="text" id="reg_name" placeholder="Enter Name" required>
+            <input type="password" id="reg_password" placeholder="Enter Password" required>
+            <button type="submit">Register</button>
+        </form>
+    </div>
+
+    <!-- Login Form -->
+    <div class="container">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <input type="text" id="login_name" placeholder="Enter Name" required>
+            <input type="password" id="login_password" placeholder="Enter Password" required>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+    <!-- Forgot Password -->
+    <div class="container">
+        <h2>Forgot Password</h2>
+        <form id="forgotPasswordForm">
+            <input type="text" id="forgot_name" placeholder="Enter Name" required>
+            <button type="submit">Get Security Question</button>
+        </form>
+        <p id="securityQuestion"></p>
+    </div>
+
+    <!-- Answer Security Question -->
+    <div class="container" id="securityAnswerContainer" style="display: none;">
+        <h2>Answer Security Question</h2>
+        <form id="answerSecurityForm">
+            <input type="text" id="security_answer" placeholder="Enter Your Answer" required>
+            <button type="submit">Submit Answer</button>
+        </form>
+    </div>
+
+    <!-- Update Password -->
+    <div class="container" id="updatePasswordContainer" style="display: none;">
+        <h2>Update Password</h2>
+        <form id="updatePasswordForm">
+            <input type="password" id="new_password" placeholder="Enter New Password" required>
+            <button type="submit">Update Password</button>
+        </form>
+    </div>
+
+    <!-- User List -->
+    <div class="container">
+        <h2>Users List</h2>
+        <ul id="userList"></ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

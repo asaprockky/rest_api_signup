@@ -8,5 +8,7 @@ class User(models.Model):
     security_answer = models.CharField(max_length= 100, default="dog")
 
 
+
+
     def __str__(self):
         return self.name
