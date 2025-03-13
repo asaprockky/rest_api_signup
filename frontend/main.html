@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Management</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h1>User Management System</h1>
@@ -15,6 +15,7 @@
         <form id="registerForm">
             <input type="text" id="reg_name" placeholder="Enter Name" required>
             <input type="password" id="reg_password" placeholder="Enter Password" required>
+            <input type="text" id="reg_sec_question" placeholder="Your Favourite Animal" required>
             <button type="submit">Register</button>
         </form>
     </div>
@@ -43,7 +44,7 @@
     <div class="container" id="securityAnswerContainer" style="display: none;">
         <h2>Answer Security Question</h2>
         <form id="answerSecurityForm">
-            <input type="text" id="security_answer" placeholder="Enter Your Answer" required>
+            <input type="text" id="security_answer" placeholder="What is your Favourite Animal" required>
             <button type="submit">Submit Answer</button>
         </form>
     </div>

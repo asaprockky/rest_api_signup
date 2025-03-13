@@ -1,15 +1,16 @@
-const API_URL = "http://127.0.0.1:8000/api/";  // Update if needed
+const API_URL = "http://127.0.0.1:8000/student_attendance/users/"; // Update if needed
 
 // Register User
 document.getElementById("registerForm").addEventListener("submit", function (event) {
     event.preventDefault();
     let name = document.getElementById("reg_name").value;
     let password = document.getElementById("reg_password").value;
+    let security_answer = document.getElementById("reg_sec_question").value;
 
-    fetch(API_URL + "add_user/", {
+    fetch(API_URL + "signup", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, password })
+        body: JSON.stringify({ name, password, security_answer })
     })
     .then(response => response.json())
     .then(data => alert("User Registered!"))
@@ -22,7 +23,7 @@ document.getElementById("loginForm").addEventListener("submit", function (event)
     let name = document.getElementById("login_name").value;
     let password = document.getElementById("login_password").value;
 
-    fetch(API_URL + "login_user/", {
+    fetch(API_URL + "login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, password })
@@ -39,7 +40,7 @@ document.getElementById("loginForm").addEventListener("submit", function (event)
 });
 
 // Fetch Users List
-fetch(API_URL + "get_users/")
+fetch(API_URL)
     .then(response => response.json())
     .then(users => {
         let userList = document.getElementById("userList");
@@ -56,7 +57,7 @@ document.getElementById("forgotPasswordForm").addEventListener("submit", functio
     event.preventDefault();
     let name = document.getElementById("forgot_name").value;
 
-    fetch(API_URL + "forget_pass/", {
+    fetch(API_URL + "forget_pass", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name })
@@ -75,7 +76,7 @@ document.getElementById("answerSecurityForm").addEventListener("submit", functio
     let name = document.getElementById("forgot_name").value;
     let answer = document.getElementById("security_answer").value;
 
-    fetch(API_URL + "answer_sec_question/", {
+    fetch(API_URL + "answer_sec_question", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, answer })
@@ -98,7 +99,7 @@ document.getElementById("updatePasswordForm").addEventListener("submit", functio
     let name = document.getElementById("forgot_name").value;
     let new_pass = document.getElementById("new_password").value;
 
-    fetch(API_URL + "update_password/", {
+    fetch(API_URL + "update_password", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, answer: new_pass })
@@ -107,4 +108,3 @@ document.getElementById("updatePasswordForm").addEventListener("submit", functio
     .then(data => alert("Password Updated Successfully!"))
     .catch(error => console.error("Error:", error));
 });
- 
